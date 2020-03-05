@@ -1,4 +1,0 @@
-O primeiro que devo apresentar é meu "software educativo" dado que gosto mesmo de educação. Minha esposa fala que eu sou um "professor nato", e quanto tiver um tempinho vou criar vários cursos para serem ministrados via [UDEMY](https://willianjusten.com.br/como-criar-um-curso-online/). 
-
-Por enquanto estou dando os primeiros passos no desenvolvimento de [software Android de uso educacional](https://play.google.com/store/apps/details?id=br.com.ven2020.envelopes2018), sendo esta uma tarefa um pouco difícil dado que é preciso armar uma equipe multidisciplinar conformada por um especialista da área pedagógica, um programador, mas aos poucos vários amigos estão se integrando neste apostolado.
-
