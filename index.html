@@ -1,22 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html><head>
 
-<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    
+        <title>Flutter 2020 (Julian Gamboa)</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="marco05_files/bootstrap.css" rel="stylesheet">
+    
+        <!-- Custom styles for this template -->
+        <link href="marco05_files/album.css" rel="stylesheet">
 
-<script>
+
+<script src="marco05_files/jquery-3.js"></script>
+<script src="marco05_files/jquery.js"></script>
+<script src="marco05_files/prompt.js"></script><script>
+
+/*
+
+*/
+
+var indice_ultimo=6530;
+var nova_posicao=indice_ultimo;
+var etiquetas_global;
+
+
+$.ajax({
+        dataType: 'json',
+        contentType: "application/json",
+        type: 'get',
+        cache: true,
+        url: "http://127.0.0.1/cron_imagenes/novo/indice_atual.php", //"ajax_info.txt",
+        'success': function (data, response) {
+            colocar_imagens(data.indice_ultimo,data.etiquetas);
+            nova_posicao=parseInt(data.indice_ultimo);
+            etiquetas_global=data.etiquetas;
+//alert(nova_posicao);
+        }
+    });
+
+
+/**********************************************
+Sábado Dezembro 14 /2019    
+**********************************************/
+
+//Coloca-se as 9 Imagens
+function colocar_imagens(indice_ultimo,etiquetas)
+{
+	base=parseInt(indice_ultimo);
+	indice=base;
+
+	for(i=1;i<10;i++)
+	{
+		nome_id="imagem_"+i;	
+		//Fazendo várias operações para CADA imagem:
+
+		// Coloca a FONTE src
+
+		document.getElementById(nome_id).setAttribute('src', "http://127.0.0.1/cron_imagenes/mostrar_imagen.php?indice="+indice);	
+
+		//OnClick da Imagem
+
+		document.getElementById(nome_id).setAttribute('onclick', "fixar_imagem("+indice+")");
+
+		nome_id_etiqueta="etiqueta_"+i;	
+		Etiqueta_unica=etiquetas[i-1];
+
+		if (typeof Etiqueta_unica === "undefined") {
+			Etiqueta_unica="";
+		}
+
+		etiquetas=Etiqueta_unica.split(",");
+
+		etiquetas_final="";
+
+		for(j=0;j<etiquetas.length;j++)
+		{
+			if(etiquetas[j].length>0)
+			{
+				if(etiquetas[j].includes("http")==true)
+				{
+					endereco=etiquetas[j];
+					label_ref="Link";
+				}
+				else
+				{
+					endereco="";
+					label_ref=etiquetas[j];
+				}		
+				referencia="<a href=\""+endereco+"\" target=\"_blank\">"+label_ref+"</a>";
+				etiquetas_final=etiquetas_final+referencia+"<br>";
+			}
+		}
+
+		
+		document.getElementById(nome_id_etiqueta).innerHTML=etiquetas_final;
+
+		//Janeiro Quarta-feira 09	Agora colocando as funções de edição
+		nome_id_botao_editar="editar_"+i;	
+		document.getElementById(nome_id_botao_editar).setAttribute('onclick', "editar("+indice+")");
+
+		indice=base+i;
+	}	
+//As informações das etiquetas devem ser coletadas numa única vez
+
+}
+
+
+
+/*
+Com as setas, pode-se movimentar no INDICE
+
+*/
+
 function whichButton(event) {
- alert(event.keyCode);
-}        
-</script>
+
+  //alert(event.keyCode);
+
+	if(event.keyCode==39)
+	{
+		nova_posicao=nova_posicao+1;
+		etiquetas_global.shift();
+		//colocar_imagens(nova_posicao,etiquetas_global);
+	}
+	if(event.keyCode==37)
+	{
+		nova_posicao=nova_posicao-1;
+		etiquetas_global=[];
+		//colocar_imagens(nova_posicao,etiquetas_global);
+	}
+
+	if(event.keyCode==38)
+	{
+		nova_posicao=nova_posicao+10;
+		etiquetas_global=[];
+		//colocar_imagens(nova_posicao,etiquetas_global);
+	}
+
+	if(event.keyCode==40)
+	{
+		nova_posicao=nova_posicao-10;
+		etiquetas_global=[];
+		//colocar_imagens(nova_posicao,etiquetas_global);
+	}
+
+}	
 
 
-</head>
+</script><script src="marco05_files/prompt_002.js"></script></head>
+
+
 
 <body onkeyup="whichButton(event)">
 
+        <header>
+                <div class="bg-dark collapse" id="navbarHeader" style="">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">Projetos</h4>
+                        <p class="text-muted">
+                            Projetos exclusivos para WEB<br>                    
+                      </p>
+                      </div>
+                      <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                          <li><a href="#" class="text-white">Follow on Github</a></li>                          
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="navbar navbar-dark bg-dark box-shadow">
+                  <div class="container d-flex justify-content-between">
+          <a href="https://github.com/julian-gamboa-bahia" class="navbar-brand d-flex align-items-center" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <strong>Juian Gamboa (Flutter)</strong>
+                    </a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  </div>
+                </div>
+              </header>
+          
+<main role="main">
+                <div class="album py-5 bg-light">
+                  <div class="container">
+<!--------------Primeira LINHA da tela Boostrap----------------->          
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+          <img id="imagem_1" class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="marco05_files/mostrar_imagen_009.jpeg" onclick="fixar_imagem(15759)">
+                          <div class="card-body">
+          <p class="card-text" id="etiqueta_1"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>                                
+                              </div>
+                              <small class="text-muted">Março 05, 2020</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+          <img id="imagem_2" class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="marco05_files/mostrar_imagen.jpeg" onclick="fixar_imagem(15760)">
+                          <div class="card-body">
+          <p class="card-text" id="etiqueta_2"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+<!-------------Botão 2-----------------><button type="button" class="btn btn-sm btn-outline-secondary" id="editar_2" onclick="editar(15760)">ver</button>
+                              </div>
+                              <small class="text-muted">Março 11, 2020</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+          <img id="imagem_3" class="card-img-top" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="marco05_files/mostrar_imagen_007.jpeg" onclick="fixar_imagem(15761)">
+                          <div class="card-body">
+          <p class="card-text" id="etiqueta_3"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+<!-------------Botão 3-----------------><button type="button" class="btn btn-sm btn-outline-secondary" id="editar_2" onclick="editar(15760)">ver</button>
+                              </div>
+                              <small class="text-muted">Março 15, 2020</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          
+          
+              </main>
+          
+              <footer class="text-muted">
+                <div class="container">
+                  <p>Porta folio de 
+                    <a href="https://github.com/julian-gamboa-bahia" target="_blank">Julian Gamboa</a>, 
+                    apresentando os projetos Flutter mais interessantes desenvolvidos no ano 2020.
+                    <br>
+                    Apesar que a versão WEB do flutter  está em constante reformulação recomendo dar os primeiros passos com está maravilhosa ferramenta lendo:
+                    <br>
+                    <li> <a href="http://flutter.dev/docs/get-started/web" target="_blank">Configuração do entorno para WEB.</a>
+<li><a href="https://dartpad.dev/" target="_blank">Treinamento onl-line com DART </a>
+                  </p>
+                  <p class="float-right">
+                    <a href="#">Regresar ao Topo</a>
+                  </p>
+                </div>
+              </footer>
+          
+              <!-- Bootstrap core JavaScript
+              ================================================== -->
+              <!-- Placed at the end of the document so the pages load faster -->
+              <script src="marco05_files/jquery-3.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+              <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+              <script src="marco05_files/popper.js"></script>
+              <script src="marco05_files/bootstrap.js"></script>
+              <script src="marco05_files/holder.js"></script>
+            
+          
 
-<h1>Testando os Keys de Java</h1>
 
-</body>
-</html>
 
+</body></html>
