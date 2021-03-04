@@ -22,9 +22,14 @@
 
 #### Programming Languages:
 
+<!--START_SECTION:activity-->
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/c/c-original.svg" alt="c" width="40" height="40" />](https://www.cprogramming.com/)
+<!--Antigo: https://devicons.github.io/devicon/devicon.git/icons/csharp/csharp-original.svg  -->
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40" />](https://www.w3schools.com/cs/)
-[<img src="https://devicons.github.io/devicon/devicon.git/icons/java/java-original-wordmark.svg" alt="java" width="40" height="40" />](https://www.java.com)
+
+<!--START_SECTION:activity-->
+[<img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="java" width="40" height="40" />](https://www.java.com)
+
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" />](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/php/php-original.svg" alt="php" width="40" height="40" />](https://www.php.net)
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" />](https://www.typescriptlang.org/)
