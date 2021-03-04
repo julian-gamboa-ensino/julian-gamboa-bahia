@@ -22,18 +22,21 @@
 
 #### Programming Languages:
 
-<!--START_SECTION:activity-->
+  <!--Parece que não tem para C  -->
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/c/c-original.svg" alt="c" width="40" height="40" />](https://www.cprogramming.com/)
-<!--Antigo: https://devicons.github.io/devicon/devicon.git/icons/csharp/csharp-original.svg  -->
+  <!--Antigo: https://devicons.github.io/devicon/devicon.git/icons/csharp/csharp-original.svg  -->
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40" />](https://www.w3schools.com/cs/)
 
-<!--START_SECTION:activity-->
+  <!--javascript-vertical usando {} para frisar o conceito de Objetos-->
 [<img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="java" width="40" height="40" />](https://www.java.com)
-
-[<img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" />](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  <!--https://www.vectorlogo.zone/logos/javascript/javascript-vertical.svg-->
+[<img src="https://www.vectorlogo.zone/logos/javascript/javascript-vertical.svg" alt="javascript" width="40" height="40" />](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  <!--javascript-vertical usando {} para frisar o conceito de Objetos-->
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/php/php-original.svg" alt="php" width="40" height="40" />](https://www.php.net)
+  <!--javascript-vertical usando {} para frisar o conceito de Objetos-->
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40" />](https://www.typescriptlang.org/)
-[<img src="https://devicons.github.io/devicon/devicon.git/icons/python/python-original.svg" alt="python" width="40" height="40" />](https://www.python.org)
+  <!--Python  https://www.vectorlogo.zone/logos/python/python-icon.svg  Django ? https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg -->
+[<img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="python" width="40" height="40" />](https://www.python.org)
 
 #### Framework:
 
@@ -43,7 +46,8 @@
 #### BackEnd:
 
 [<img src="https://devicons.github.io/devicon/devicon.git/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40" />](https://expressjs.com)
-[<img src="https://devicons.github.io/devicon/devicon.git/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" />](https://nodejs.org)
+  <!--Node e Dino ?-->
+[<img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg" alt="nodejs" width="40" height="40" />](https://nodejs.org)
 
 #### FrontEnd:
 
