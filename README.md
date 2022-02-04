@@ -1,3 +1,5 @@
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=julian-gamboa-bahia)
+
 <h1 align="center">Hi 👋, I'm Julian Gamboa</h1>
 
 ## A passionate developer
@@ -10,7 +12,7 @@
 
 [Maratona](https://github.com/julian-gamboa-bahia/maratona-btc-2020)
 
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=julian-gamboa-bahia&show_icons=true&bg_color=14274e&text_color=FFF&title_color=FFFF&icon_color=FFF)
+
 
 <!--START_SECTION:activity-->
 
