@@ -316,12 +316,31 @@
             var par = this.activatedRoute.snapshot.paramMap.get('parametro');
             this.etiqueta = par + "";
             this.getUrl_imagem_METODO();
+            this.avanco_certificados_automatico(this.indice_imagen);
+          }
+        }, {
+          key: "avanco_certificados_automatico",
+          value: function avanco_certificados_automatico(entrada) {
+            var _this2 = this;
+
+            //console.log("avanco_certificados_automatico "+entrada);
+            setInterval(function () {
+              _this2.avanco_certificados(entrada);
+            }, 3 * 1000);
+          }
+        }, {
+          key: "avanco_certificados",
+          value: function avanco_certificados(entrada) {
+            if (this.indice_imagen === this.maximo_indice_imagen) {
+              this.indice_imagen = 0;
+              console.log("avanco_certificados   " + this.indice_imagen);
+            }
+
+            this.indice_imagen++;
           }
         }, {
           key: "keyEvent",
           value: function keyEvent(event) {
-            console.log(event);
-
             if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
               this.increment();
             }
@@ -371,11 +390,11 @@
         }, {
           key: "getUrl_imagem_METODO",
           value: function getUrl_imagem_METODO() {
-            var _this2 = this;
+            var _this3 = this;
 
             this.getFotosBucketService.getUrl_imagem(this.etiqueta).subscribe(function (url_foto) {
-              _this2.imagem = url_foto.reverse();
-              _this2.maximo_indice_imagen = url_foto.length;
+              _this3.imagem = url_foto.reverse();
+              _this3.maximo_indice_imagen = url_foto.length;
             });
           }
         }]);
@@ -869,10 +888,10 @@
         }, {
           key: "getUrl_imagem_METODO",
           value: function getUrl_imagem_METODO() {
-            var _this3 = this;
+            var _this4 = this;
 
             this.getFotosBucketService.getUrl_imagem("").subscribe(function (url_foto) {
-              _this3.nome_pasta = url_foto.reverse();
+              _this4.nome_pasta = url_foto.reverse();
             }); ///////////////////////////////
           }
         }]);
@@ -1468,14 +1487,14 @@
         _createClass(JanelaModalClassificarComponent, [{
           key: "open",
           value: function open(content) {
-            var _this4 = this;
+            var _this5 = this;
 
             this.modalService.open(content, {
               ariaLabelledBy: 'modal-basic-title'
             }).result.then(function (result) {
-              _this4.closeResult = "PUT com a : ".concat(result);
+              _this5.closeResult = "PUT com a : ".concat(result);
             }, function (reason) {
-              _this4.closeResult = "inputNumber ".concat(_this4.nome_imagem);
+              _this5.closeResult = "inputNumber ".concat(_this5.nome_imagem);
             });
           }
         }, {
