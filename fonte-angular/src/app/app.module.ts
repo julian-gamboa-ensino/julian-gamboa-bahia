@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JanelaModalClassificarComponent } from './components/janela-modal-classificar/janela-modal-classificar.component';
 import { SelectClassificadorComponent } from './components/select-classificador/select-classificador.component';
 import { ComparadorLogoTechCertificadoComponent } from './components/comparador-logo-tech-certificado/comparador-logo-tech-certificado.component';
+import { ComparadorImagensComponent } from './components/comparador-imagens/comparador-imagens.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ComparadorLogoTechCertificadoComponent } from './components/comparador-
     ListaPastasComponent,
     JanelaModalClassificarComponent,
     SelectClassificadorComponent,
-    ComparadorLogoTechCertificadoComponent
+    ComparadorLogoTechCertificadoComponent,
+    ComparadorImagensComponent
   ],
   imports: [
     BrowserModule,

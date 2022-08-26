@@ -68,7 +68,7 @@ ngOnInit() {
 avanco_certificados_automatico(entrada:number)
 {
   //console.log("avanco_certificados_automatico "+entrada);
-  setInterval(() => { this.avanco_certificados(entrada); }, 3*1000); 
+  setInterval(() => { this.avanco_certificados(entrada); }, 10*1000); 
 
 }
 

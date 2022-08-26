@@ -44,15 +44,27 @@ Demo em Heroku<br>
 <!--Elemento da Matriz---------> 
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
-<!--Image--------->          
-          <img id="imagem-1" src="{{imagem[indice_imagen]}}"
-          class="card-img-top" alt="Image 1" style="height: 225px; width: 100%; display: block;" 
+<!--Image-
+  
+            <img id="imagem-1" src="{{imagem[indice_imagen]}}"
+          class="card-img-top" alt="Image 1" 
+          style="height: 225px; width: 100%; display: block;" 
            >
+           -------->          
 
-<app-janela-modal-classificar 
-nome_imagem="{{imagem[indice_imagen]}}"
-etiqueta_imagem="{{etiqueta}}" >  
-</app-janela-modal-classificar>
+           <app-comparador-imagens 
+    
+           id="imagem-1"
+           
+           fonte_image_1="{{imagem[indice_imagen]}}"
+           
+           fonte_image_2="{{imagem[indice_imagen+1]}}"
+           
+           ></app-comparador-imagens>
+           <app-janela-modal-classificar 
+          nome_imagem="{{imagem[indice_imagen]}}"
+          etiqueta_imagem="{{etiqueta}}" >  
+          </app-janela-modal-classificar>
 
 </div>
 </div>
